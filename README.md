@@ -4,8 +4,8 @@
 
 ### version
 
-node: 18+
-Next.js: 14.1.4
+node: 18+    
+Next.js: 14.1.4    
 React: 18
 
 ### install
