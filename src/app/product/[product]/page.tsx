@@ -1,4 +1,8 @@
-// slug: 'Iphone15Pro', 'Iphone15', ...
-export default function productPage({ params }: { params: { slug: string } }) {
-  return <div>My page: {params.slug}</div>;
+// slug(product): 'Iphone15Pro', 'Iphone15', ...
+export default function productPage({
+  params,
+}: {
+  params: { product: string };
+}) {
+  return <div>My page: {params.product}</div>;
 }
