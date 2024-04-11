@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '../css/globals.css';
+import '../styles/globals.css';
+import Layout from '@/components/Layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,15 +19,10 @@ export default function RootLayout({
     <html lang="ko">
       <body className={inter.className}>
         <div id="wrap">
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/list">List</a>
-            </li>
-          </ul>
-          {children}
+          <Layout>
+            {process.env.siteTitle}
+            {children}
+          </Layout>
         </div>
       </body>
     </html>
