@@ -1,5 +1,5 @@
 {
-  "name": "fresh-delivery",
+  "name": "study-level3-sujipark",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,13 +14,16 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@notion-render/bookmark-plugin": "^0.0.2",
+    "@notion-render/client": "^0.0.2",
+    "@notion-render/hljs-plugin": "^0.0.2",
+    "@notionhq/client": "^2.2.15",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
+    "dotenv": "^16.4.5",
     "next": "14.1.4",
-    "notion-client": "^6.16.0",
     "react": "^18",
-    "react-dom": "^18",
-    "react-notion-x": "^6.16.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",

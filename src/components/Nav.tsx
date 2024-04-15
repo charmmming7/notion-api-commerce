@@ -12,22 +12,22 @@ function Nav() {
         <Link href="/" passHref>
           <h1 className="flex items-center no-underline">
             <Image
-              height="32"
-              width="32"
+              width="78"
+              height="30"
               alt="logo"
-              className="mr-1 h-8 w-8 object-contain"
+              className="mr-1 w-10 h-7 object-contain"
               src="/logo.svg"
             />
             <span className="font-primary text-xl font-bold tracking-tight">
               {process.env.siteTitle}
-              Apple shop
+              Apple Shop
             </span>
           </h1>
         </Link>
         <div>
           <Link href="/cart" passHref aria-label="cart" className="relative">
             <FontAwesomeIcon
-              className="text-palette-primary m-auto w-6"
+              className="text-primary m-auto w-6"
               icon={faShoppingCart}
             />
             {cartItems === 0 ? null : (

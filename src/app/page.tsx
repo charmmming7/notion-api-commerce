@@ -1,44 +1,44 @@
-// import List from '@/components/List';
-// import { notion } from '@/app/lib/notion.ts';
-// import { NotionPage } from '@/components/notion/renderer.tsx';
+'use server';
 
-// export const products = [
-//   { name: 'Iphone15Pro' },
-//   { name: 'Iphone15' },
-//   { name: 'Iphone14' },
-// ];
+import Link from 'next/link';
+import {TOKEN, DATABASE_ID} from "@/app/config";
 
-// const pageId = process.env.NOTION_DATABASE_ID!;
+// 빌드 타임에 호출. 데이터 가져온 다음에 화면에 렌더링
+const { Client } = require('@notionhq/client');
+const notion = new Client({ auth: TOKEN });
 
-// async function getData(rootPageId: string) {
-//   return notion.getPage(rootPageId);
-// }
-
-// const data = getData(pageId);
-
-// export default function Home() {
-//   return (
-//     <div className="flex justify-center p-10">
-//       {/* <List products={products} /> */}
-//       <NotionPage recordMap={data} rootPageId={pageId} />
-//     </div>
-//   );
-// }
-
-
-
-import { notion } from "@/app/lib/notion";
-import { NotionPage } from "@/components/notion";
-
-const rootPageId = process.env.NOTION_DATABASE_ID!;
-
-async function getData(rootPageId:string) {
-  return await notion.getPage(rootPageId);
-}
-export default async function Home() {
-  const data = await getData(rootPageId);
+export default async function Index() {
+  const products = await notion.databases.query({
+    database_id: `${DATABASE_ID}`,
+  });
 
   return (
-    <NotionPage recordMap={data} rootPageId={rootPageId} />
+    <div className="flex justify-center p-10">
+      <div className="text-center">
+        <h1 className="mb-10 text-3xl">Products</h1>
+        {
+          products.results.map((p: any) => {
+          const name = p.properties.Name.title[0].plain_text;
+          const brand = p.properties.Brand.rich_text[0].plain_text;
+          const quantity = p.properties.Quantity.number;
+          const description = p.properties.Description.rich_text[0].plain_text;
+          const slug = p.properties.Slug.rich_text[0].plain_text;
+            return (
+              <Link href={`/product/${slug}`} passHref key={name}>
+                <div className="mb-10">
+                  <strong className="p-1">[{brand}] {name}</strong>
+                  <p>
+                    quantity: {quantity}
+                  </p>
+                  <p>
+                    {description}
+                  </p>
+                </div>
+              </Link>
+            );
+          })
+        }
+      </div>
+    </div>
   );
 }
