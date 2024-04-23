@@ -20,7 +20,7 @@ function Footer() {
           />
           <span className="font-primary text-m font-bold tracking-tight">
             {process.env.siteTitle}
-            Apple shop
+            SJ Shop
           </span>
         </span>
       </Link>

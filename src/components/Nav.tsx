@@ -20,7 +20,7 @@ function Nav() {
             />
             <span className="font-primary text-xl font-bold tracking-tight">
               {process.env.siteTitle}
-              Apple Shop
+              SJ Shop
             </span>
           </h1>
         </Link>

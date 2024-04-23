@@ -3,4 +3,5 @@ export interface ProductProps {
   quantity: number;
   brand: string;
   description: string;
+  content?: string;
 }

@@ -9,7 +9,7 @@ function Layout({
   return (
     <div className="flex min-h-screen flex-col justify-between">
       <Nav />
-      <main>{children}</main>
+      <main className='max-w-screen-lg m-auto'>{children}</main>
       <Footer />
     </div>
   );

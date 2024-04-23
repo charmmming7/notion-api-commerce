@@ -21,7 +21,7 @@ export default async function Index() {
           const name = p.properties.Name.title[0].plain_text;
           const brand = p.properties.Brand.rich_text[0].plain_text;
           const quantity = p.properties.Quantity.number;
-          const description = p.properties.Description.rich_text[0].plain_text;
+          const description = (p.properties.Description as any).multi_select[0].name;
           const slug = p.properties.Slug.rich_text[0].plain_text;
             return (
               <Link href={`/product/${slug}`} passHref key={name}>
