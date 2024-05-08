@@ -8,7 +8,7 @@ interface Props {
 export default function List({ products }: Props) {
   return (<>
     {
-      products.results.map((p: any) => {
+      products.map((p: any) => {
         const name = p.properties.Name.title[0].plain_text;
         const description = p.properties.Brand.rich_text[0].plain_text;
         const brand = p.properties.Quantity.number;

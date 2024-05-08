@@ -1,7 +1,16 @@
 export interface ProductProps {
+  id: string;
   name: string;
-  quantity: number;
   brand: string;
-  description: string;
+  quantity?: number;
+  price: number;
+  imgSrc?: string;
+  tags?: tagProps;
+  slug: string;
   content?: string;
+}
+
+export interface tagProps {
+  name: string;
+  color: string;
 }

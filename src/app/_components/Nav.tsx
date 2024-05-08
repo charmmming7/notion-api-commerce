@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 function Nav() {
   const cartItems = 10; // 임시
@@ -24,13 +24,19 @@ function Nav() {
             </span>
           </h1>
         </Link>
-        <div>
+        <div className='flex items-center gap-4'>
+          <Link href="/search" passHref aria-label="search" className="relative">
+            <FontAwesomeIcon
+              className="text-primary m-auto w-6"
+              icon={faMagnifyingGlass}
+            />
+          </Link>
           <Link href="/cart" passHref aria-label="cart" className="relative">
             <FontAwesomeIcon
               className="text-primary m-auto w-6"
               icon={faShoppingCart}
             />
-            {cartItems === 0 ? null : (
+            {(cartItems &&
               <div className="-right-50% absolute -top-4 min-w-6  translate-x-[1rem] rounded-full bg-black px-[0.4rem] py-1 text-center text-xs font-semibold text-white">
                 {cartItems}
               </div>

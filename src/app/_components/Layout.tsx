@@ -1,5 +1,5 @@
-import Nav from '@/components/Nav';
-import Footer from '@/components/Footer';
+import Nav from '@/app/_components/Nav';
+import Footer from '@/app/_components/Footer';
 
 function Layout({
   children,
@@ -9,7 +9,7 @@ function Layout({
   return (
     <div className="flex min-h-screen flex-col justify-between">
       <Nav />
-      <main className='max-w-screen-lg m-auto'>{children}</main>
+      <main className='max-w-screen-lg w-full'>{children}</main>
       <Footer />
     </div>
   );
