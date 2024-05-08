@@ -1,7 +1,7 @@
 import { Client } from "@notionhq/client";
 import { BlockObjectResponse, PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { cache } from "react";
-import { TOKEN, DATABASE_ID } from "@/app/config";
+import { TOKEN, DATABASE_ID } from "@/app/_config";
 
 // 빌드 타임에 호출. 데이터 가져온 다음에 화면에 렌더링
 export const notion = new Client({
@@ -64,6 +64,12 @@ export const getDatabySearch = async(searchKeyword: string) => {
       or: [
         {
           property: 'Name',
+          title: {
+            contains: searchKeyword
+          }
+        },
+        {
+          property: 'Brand',
           title: {
             contains: searchKeyword
           }

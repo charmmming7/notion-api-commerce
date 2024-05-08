@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 

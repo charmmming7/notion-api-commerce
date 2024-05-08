@@ -7,7 +7,7 @@ export default async function Index() {
 
   return (
     <div className="flex justify-center p-10">
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-x-6 gap-y-8">
         {
           products.map((product: any) => {
             const p = product.properties;
@@ -15,7 +15,8 @@ export default async function Index() {
               id: p.id,
               name: p.Name.title[0].text.content,
               brand: p.Brand.rich_text[0].plain_text,
-              // imgSrc: p.Thumbnail.files[0].file.url,
+              imgType: p.Thumbnail.files[0].type,
+              imgSrc: p.Thumbnail.files[0].type === 'external' ? p.Thumbnail.files[0].external.url : p.Thumbnail.files[0].file.url,
               price: p.Price.number,
               tags: p.Tags.multi_select[0],
               slug: p.Slug.rich_text[0].plain_text,

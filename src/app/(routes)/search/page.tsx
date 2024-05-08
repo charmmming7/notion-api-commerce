@@ -14,10 +14,9 @@ export default async function SearchPage({
   const query = searchParams?.query || '';
   // const currentPage = Number(searchParams?.page) || 1;
   const products = await getDatabySearch(query);
-  console.log(products);
 
   return (
-    <div className="max-w-3xl m-auto">
+    <div className="max-w-3xl m-auto mt-[3rem]">
       <Search />
       {query && 
         <div className='mt-6'>
@@ -30,7 +29,8 @@ export default async function SearchPage({
                   id: p.id,
                   name: p.Name.title[0].text.content,
                   brand: p.Brand.rich_text[0].plain_text,
-                  // imgSrc: p.Thumbnail.files[0].file.url,
+                  imgType: p.Thumbnail.files[0].type,
+                  imgSrc: p.Thumbnail.files[0].type === 'external' ? p.Thumbnail.files[0].external.url : p.Thumbnail.files[0].file.url,
                   price: p.Price.number,
                   tags: p.Tags.multi_select[0],
                   slug: p.Slug.rich_text[0].plain_text,

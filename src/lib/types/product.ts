@@ -5,6 +5,7 @@ export interface ProductProps {
   quantity?: number;
   price: number;
   imgSrc?: string;
+  imgType?: string;
   tags?: tagProps;
   slug: string;
   content?: string;

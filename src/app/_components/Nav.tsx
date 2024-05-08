@@ -8,7 +8,7 @@ function Nav() {
 
   return (
     <header className="border-palette-lighter sticky top-0 z-20 border-b bg-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 pb-2 pt-4 md:pt-6">
+      <div className="flex max-w-6xl items-center justify-between mx-auto px-6 pb-2 pt-4">
         <Link href="/" passHref>
           <h1 className="flex items-center no-underline">
             <Image
@@ -37,7 +37,7 @@ function Nav() {
               icon={faShoppingCart}
             />
             {(cartItems &&
-              <div className="-right-50% absolute -top-4 min-w-6  translate-x-[1rem] rounded-full bg-black px-[0.4rem] py-1 text-center text-xs font-semibold text-white">
+              <div className="absolute -right-50% -top-4 min-w-6 p-[0.2rem] text-center text-xs font-semibold text-white translate-x-[1rem] rounded-full bg-black">
                 {cartItems}
               </div>
             )}
