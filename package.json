@@ -1,9 +1,10 @@
 {
-  "name": "study-level3-sujipark",
+  "name": "notion-api-commerce",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3005",
+    "open-browser": "start http://localhost:3005",
     "build": "next build",
     "start": "next start",
     "format": "prettier --cache --write .",
