@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start -p 3005",
     "format": "prettier --cache --write .",
-    "lint": "next lint --cache .",
-    "prepare": "chmod +x ./node_modules/husky/lib/bin.js"
+    "lint": "next lint --cache ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
