@@ -8,7 +8,7 @@ interface ProductItemProps {
 }
 
 function ProductItem({ ItemData }: ProductItemProps) {
-  const { id, name, brand, price, imgSrc, tags, slug } = ItemData;
+  const { name, brand, price, imgSrc, tags, slug } = ItemData;
 
   const colorVariants: any = {
     blue: 'bg-blue-200',
