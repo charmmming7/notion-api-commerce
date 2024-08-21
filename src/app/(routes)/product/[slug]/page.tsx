@@ -1,13 +1,13 @@
-import { getPageContent, getPageBySlug, notion } from "@/app/_utils/notion";
-import { NotionRenderer } from "@notion-render/client";
-import { notFound } from "next/navigation";
+import { getPageContent, getPageBySlug, notion } from '@/app/_utils/notion';
+import { NotionRenderer } from '@notion-render/client';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const generateStaticParams = () => [{ slug: "page" }];
+export const generateStaticParams = () => [{ slug: 'page' }];
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  console.log("Slug: ", params);
+  console.log('Slug: ', params);
   const product = await getPageBySlug(params.slug);
 
   // Redirect to not found page!
@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               height={200}
               width={200}
               src={thumb}
-              className="object-cover mx-auto"
+              className="mx-auto object-cover"
               alt="thumbnail"
             />
           </div>
@@ -43,13 +43,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <Link href={`/brand/${brand}`}>
             <span>[{brand}]</span>
           </Link>
-          <h1 className="text-4xl font-black mb-2">{name}</h1>
+          <h1 className="mb-2 text-4xl font-black">{name}</h1>
           <div>Quantity: {quantity}</div>
         </div>
       </div>
       <div>
         <div
-          className="p-8 text-xl text-center leading-10 prose prose-p:text-white prose-headings:text-white"
+          className="prose prose-p:text-white prose-headings:text-white p-8 text-center text-xl leading-10"
           dangerouslySetInnerHTML={{ __html: html }}
         ></div>
       </div>

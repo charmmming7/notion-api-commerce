@@ -1,7 +1,10 @@
-import { Client } from "@notionhq/client";
-import { BlockObjectResponse, PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { cache } from "react";
-import { TOKEN, DATABASE_ID } from "@/app/_config";
+import { Client } from '@notionhq/client';
+import {
+  BlockObjectResponse,
+  PageObjectResponse,
+} from '@notionhq/client/build/src/api-endpoints';
+import { cache } from 'react';
+import { TOKEN, DATABASE_ID } from '@/app/_config';
 
 // 빌드 타임에 호출. 데이터 가져온 다음에 화면에 렌더링
 export const notion = new Client({
@@ -14,10 +17,10 @@ export const getPages = async () => {
     database_id: `${DATABASE_ID}` as string,
     sorts: [
       {
-        property: "Brand",
-        direction: "ascending"
-      }
-    ]
+        property: 'Brand',
+        direction: 'ascending',
+      },
+    ],
   });
   const data = await response.results;
   return data;
@@ -30,13 +33,13 @@ export const getPageContent = cache((pageId: string) => {
     .then((res) => res.results as BlockObjectResponse[]);
 });
 
-// Slug(url) 값으로 페이지 가져오기 
+// Slug(url) 값으로 페이지 가져오기
 export const getPageBySlug = cache((slug: string) => {
   return notion.databases
     .query({
       database_id: DATABASE_ID as string,
       filter: {
-        property: "Slug",
+        property: 'Slug',
         rich_text: {
           equals: slug,
         },
@@ -46,7 +49,7 @@ export const getPageBySlug = cache((slug: string) => {
 });
 
 // 검색
-export const getDatabySearch = async(searchKeyword: string) => {
+export const getDatabySearch = async (searchKeyword: string) => {
   // const res = await notion.search({
   //   query: searchKeyword ? searchKeyword : '',
   //   filter: {
@@ -58,25 +61,25 @@ export const getDatabySearch = async(searchKeyword: string) => {
   //     timestamp: 'last_edited_time'
   //   },
   // });
-  const res = await notion.databases.query({ 
+  const res = await notion.databases.query({
     database_id: `${DATABASE_ID}` as string,
     filter: {
       or: [
         {
           property: 'Name',
           title: {
-            contains: searchKeyword
-          }
+            contains: searchKeyword,
+          },
         },
         {
           property: 'Brand',
           title: {
-            contains: searchKeyword
-          }
+            contains: searchKeyword,
+          },
         },
-      ]
-    }
+      ],
+    },
   });
   const data = await res.results;
   return data;
-}
+};

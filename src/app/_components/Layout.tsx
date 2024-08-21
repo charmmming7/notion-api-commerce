@@ -7,9 +7,9 @@ function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex min-h-screen flex-col justify-between mx-auto">
+    <div className="mx-auto flex min-h-screen flex-col justify-between">
       <Nav />
-      <main className='max-w-screen-lg w-full mb-auto mx-auto'>{children}</main>
+      <main className="mx-auto mb-auto w-full max-w-screen-lg">{children}</main>
       <Footer />
     </div>
   );

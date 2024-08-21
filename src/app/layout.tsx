@@ -19,9 +19,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={inter.className}>
         <div id="wrap">
-          <Layout>
-            {children}
-          </Layout>
+          <Layout>{children}</Layout>
         </div>
       </body>
     </html>
