@@ -2,13 +2,20 @@
   "name": "notion-api-commerce",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://charmmming7.github.io/notion-api-commerce/",
   "scripts": {
     "dev": "next dev -p 3005",
     "open-browser": "start http://localhost:3005",
-    "build": "next build",
+    "build": "next build && next export",
+    "preexport": "rimraf out",
+    "export": "next export",
+    "touch": "touch out/.nojekyll",
+    "posttouch": "touch out/_next/.nojekyll",
+    "predeploy": "npm run build",
     "start": "next start -p 3005",
     "format": "prettier --cache --write .",
-    "lint": "next lint --cache ."
+    "lint": "next lint --cache .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",

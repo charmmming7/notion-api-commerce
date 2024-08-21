@@ -4,11 +4,13 @@ import { notFound } from "next/navigation";
 import Image from 'next/image';
 import Link from 'next/link';
 
+export const generateStaticParams = () => [{ slug: "page" }];
+
 export default async function Page({ params }: { params: { slug: string } }) {
   console.log("Slug: ", params);
   const product = await getPageBySlug(params.slug);
 
-  //Redirect to not found page!
+  // Redirect to not found page!
   if (!product) notFound();
 
   const content = await getPageContent(product.id);
