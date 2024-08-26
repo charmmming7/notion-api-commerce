@@ -16,10 +16,6 @@ const nextConfig = {
     unoptimized: true, // next 이미지 최적화 옵션 off (정적 파일만을 사용하는 SSG 방식에서는 불가능하므로 off)
   },
   reactStrictMode: true,
-  // output: 'export',
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
-  },
 };
 
 export default nextConfig;
