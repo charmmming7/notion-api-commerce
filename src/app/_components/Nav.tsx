@@ -1,6 +1,5 @@
 'use client';
-import Link from 'next/link';
-import Image from 'next/image';
+import TopBanner from '@components/TopBanner';
 import {
   Dialog,
   DialogBackdrop,
@@ -21,9 +20,8 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { Fragment, useState } from 'react';
 import Logo from 'public/logo.svg';
-import TopBanner from '@components/TopBanner';
+import { Fragment, useState } from 'react';
 
 const navigation = {
   categories: [
