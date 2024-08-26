@@ -18,7 +18,9 @@
     "allowImportingTsExtensions": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/app/_components/*"]
     },
     "plugins": [
       {

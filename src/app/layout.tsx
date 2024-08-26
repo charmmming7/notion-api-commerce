@@ -1,10 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import '../styles/globals.css';
 import Layout from '@/app/_components/Layout';
 import { Suspense } from 'react';
-
-const inter = Inter({ subsets: ['latin'] });
+import '../styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'Shopping Mall',
@@ -18,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={inter.className}>
+      <body>
         <div id="wrap">
           <Suspense>
             <Layout>{children}</Layout>

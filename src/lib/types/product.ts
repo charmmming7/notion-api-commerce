@@ -4,11 +4,14 @@ export interface ProductProps {
   brand: string;
   quantity?: number;
   price: number;
+  discountedPrice?: number;
   imgSrc?: string;
+  colors?: string[];
   imgType?: string;
-  tags?: tagProps;
+  tags?: tagProps[];
   slug: string;
   content?: string;
+  salesInfo?: string;
 }
 
 export interface tagProps {

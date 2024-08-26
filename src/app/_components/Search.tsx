@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 export default function Search() {
   const [searchInput, setSearchInput] = useState('');
@@ -54,10 +54,10 @@ export default function Search() {
           aria-label="search"
           className="absolute right-0 top-0 h-[40px] w-[40px]"
         >
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             className="text-primary m-auto w-6"
             icon={faMagnifyingGlass}
-          />
+          /> */}
         </button>
       </form>
     </div>

@@ -16,15 +16,41 @@
   }
 }
 
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
+@layer base {
+  @font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src:
+      local('Pretendard Bold'),
+      url('/fonts/Pretendard-Bold.subset.woff2') format('woff2'),
+      url('/fonts/Pretendard-Bold.subset.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src:
+      local('Pretendard Regular'),
+      url('/fonts/Pretendard-Regular.subset.woff2') format('woff2'),
+      url('/fonts/Pretendard-Regular.subset.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-display: swap;
+    src:
+      local('Pretendard ExtraLight'),
+      url('/fonts/Pretendard-ExtraLight.subset.woff2') format('woff2'),
+      url('/fonts/Pretendard-ExtraLight.subset.woff') format('woff');
+  }
+}
+
+html {
+  @apply font-sans;
+}
 
 .blind {
   position: absolute;
