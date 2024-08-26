@@ -1,4 +1,6 @@
-# Next.js + React + TypeScript + Tailwind CSS
+# Notion API 활용 Shopping mall website
+
+Next.js + React + TypeScript + Tailwind CSS
 
 ## Getting Started
 
