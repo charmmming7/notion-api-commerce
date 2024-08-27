@@ -36,6 +36,7 @@ module.exports = {
     'no-console': 'warn',
     'tailwindcss/classnames-order': 'warn', // Tailwind CSS 클래스 순서 검사
     'no-unused-vars': 'off', // 개발 시 임시 추가
+    'no-unused-vars': 'off', // 개발 시 임시 추가
   },
   env: {
     browser: true,

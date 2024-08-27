@@ -5,7 +5,7 @@ interface ProductInfoProps {
 }
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
-  const { id, name, price, discountedPrice, imgSrc, tags, colors } = product;
+  const { name, price, discountedPrice, colors } = product;
 
   return (
     <div className="mt-4 lg:row-span-3 lg:mt-0">

@@ -11,7 +11,7 @@ const SearchPage = async ({
   };
 }) => {
   const query = searchParams?.query || '';
-  const products = await getDatabySearch(query);
+  const products: any[] = await getDatabySearch(query);
 
   return (
     <div className="m-auto mt-[3rem] max-w-3xl">
