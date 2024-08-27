@@ -35,6 +35,7 @@ module.exports = {
     'react/prop-types': 'off', // TypeScript를 사용하므로 prop-types 비활성화
     'no-console': 'warn',
     'tailwindcss/classnames-order': 'warn', // Tailwind CSS 클래스 순서 검사
+    'no-unused-vars': 'off', // 개발 시 임시 추가
   },
   env: {
     browser: true,

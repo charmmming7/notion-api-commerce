@@ -1,18 +1,13 @@
-import ProductItem from '@/app/_components/product/ProductItem';
-import { getProductItemData } from '@/app/_utils/getProductItemData';
+import ProductCard from '@/app/_components/product/ProductCard';
+import { ProductProps } from '@/lib/types/product';
+import { parseProductData } from '@/app/_utils/parseProductData';
 
-interface ProductListProps {
-  products: any[];
-}
-
-const ProductList = ({ products }: ProductListProps) => {
+const ProductList = ({ products }: { products: ProductProps[] }) => {
   return (
     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-      {products.map((product) => {
-        const productItemData = getProductItemData(product);
-        return (
-          <ProductItem ItemData={productItemData} key={productItemData.id} />
-        );
+      {products.map((product: ProductProps) => {
+        const parsedData = parseProductData(product);
+        return <ProductCard data={parsedData} key={parsedData.id} />;
       })}
     </div>
   );

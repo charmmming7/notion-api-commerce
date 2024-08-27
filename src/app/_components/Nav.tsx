@@ -20,6 +20,7 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import Logo from 'public/logo.svg';
 import { Fragment, useState } from 'react';
 
@@ -338,10 +339,10 @@ function Nav() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <Link href="/">
                   <span className="blind">Trendify</span>
                   <Logo height={74} />
-                </a>
+                </Link>
               </div>
 
               {/* Flyout menus */}
@@ -359,7 +360,6 @@ function Nav() {
                         transition
                         className="absolute inset-x-0 top-full text-sm text-gray-500 transition data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                       >
-                        {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                         <div
                           aria-hidden="true"
                           className="absolute inset-0 top-1/2 bg-white shadow"

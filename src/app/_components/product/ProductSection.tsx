@@ -1,12 +1,13 @@
 import { getPages } from '@/app/_utils/notion';
 import ProductList from '@/app/_components/product/ProductList';
-
 interface ProductSectionProps {
   title: string;
 }
 
 const ProductSection = async ({ title }: ProductSectionProps) => {
-  const products = await getPages();
+  const products: any[] = await getPages();
+
+  if (!products?.length) return null;
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-14 sm:px-6 sm:py-20 lg:max-w-7xl lg:px-8">
