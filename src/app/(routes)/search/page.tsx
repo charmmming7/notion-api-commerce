@@ -1,4 +1,4 @@
-import Search from '@/app/_components/Search';
+import SearchForm from '@/app/_components/SearchForm';
 import { getDatabySearch } from '@/app/_utils/notion';
 import ProductList from '@components/product/ProductList';
 
@@ -14,10 +14,10 @@ const SearchPage = async ({
   const products: any[] = await getDatabySearch(query);
 
   return (
-    <div className="m-auto mt-[3rem] max-w-3xl">
-      <Search />
+    <div className="mx-auto mb-auto w-full max-w-screen-lg pb-14 lg:pb-4">
+      <SearchForm />
       {query && (
-        <div className="mt-6">
+        <div className="sm:px-18 mx-auto px-4 py-2 sm:py-6 lg:max-w-7xl lg:px-8 lg:py-14">
           {products.length > 0 ? (
             <ProductList products={products} />
           ) : (

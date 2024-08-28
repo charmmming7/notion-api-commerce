@@ -338,10 +338,13 @@ function Nav() {
               </button>
 
               {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
-                <Link href="/">
+              <div className="flex">
+                <Link
+                  href="/"
+                  className="h-[60px] w-[80px] sm:h-[74px] sm:w-[120px]"
+                >
                   <span className="blind">Trendify</span>
-                  <Logo height={74} />
+                  <Logo width={'100%'} height={'100%'} />
                 </Link>
               </div>
 
@@ -457,13 +460,17 @@ function Nav() {
 
                 {/* Search */}
                 <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
+                  <Link
+                    href="/search"
+                    passHref
+                    className="p-2 text-gray-400 hover:text-gray-500"
+                  >
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon
                       aria-hidden="true"
                       className="h-6 w-6"
                     />
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Cart */}

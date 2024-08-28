@@ -10,8 +10,8 @@ const ProductSection = async ({ title }: ProductSectionProps) => {
   if (!products?.length) return null;
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-14 sm:px-6 sm:py-20 lg:max-w-7xl lg:px-8">
-      <h2 className="text-center text-4xl font-extralight uppercase tracking-tight text-gray-900">
+    <div className="sm:px-18 mx-auto px-4 py-4 sm:py-6 lg:max-w-7xl lg:px-8 lg:py-14">
+      <h2 className="mb-2 text-center text-xl font-extralight uppercase tracking-tight text-gray-900 sm:mb-8 sm:text-4xl">
         {title}
       </h2>
       <ProductList products={products} />

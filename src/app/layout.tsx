@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Shopping Mall',
+  title: 'Trendify',
   description: 'shopping mall web site',
 };
 
